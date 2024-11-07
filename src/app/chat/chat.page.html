@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>{{ otherUserName || 'Chat' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let message of messages" [ngClass]="{'sent-message': message.senderId === currentUserId, 'received-message': message.senderId !== currentUserId}">
+      <ion-label>
+        <p>
+          <strong>{{ message.senderId === currentUserId ? 'Yo:' : otherUserName + ':' }}</strong>
+          {{ message.text }}
+        </p>
+        <p class="message-timestamp">{{ message.timestamp | date:'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="newMessage"
+        placeholder="Escribe un mensaje..."
+        clearInput>
+      </ion-input>
+      <ion-button (click)="sendMessage()" slot="end" [disabled]="!newMessage.trim()">Enviar</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+
+<style>
+  .message-timestamp {
+    font-size: 12px;
+    color: gray;
+  }
+</style>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contacto of contactos">
+      <ion-label>
+        <h2>{{ contacto.otherUserName }}</h2> <!-- Nombre del otro usuario -->
+        <p *ngIf="contacto.lastMessage">{{ contacto.lastMessage.text }}</p> <!-- Último mensaje -->
+      </ion-label>
+      <ion-button (click)="goToChat(contacto.otherUserId)">Ir al chat</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

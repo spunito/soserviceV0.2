@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true">
+
+
+  <!-- Swiper container -->
+  <swiper-container
+    slides-per-view="1"
+    space-between="10"
+    pagination="true"
+    (slideChange)="onSlideChange($event)"
+    #swiperContainer
+  >
+    <swiper-slide>
+      <img src="/assets/logo/SOSERVICE.png" alt="Parte 1" />
+      
+      <p>Este es el contenido de la primera parte.</p>
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/assets/logo/SOSERVICE.png" alt="Parte 2" />
+      
+      <p>Este es el contenido de la segunda parte.</p>
+    </swiper-slide>
+    <swiper-slide>
+      <img src="/assets/logo/SOSERVICE.png" alt="Parte 3" />
+      
+      <p>Este es el contenido de la tercera parte.</p>
+      <p></p>
+    </swiper-slide>
+  </swiper-container>
+
+  <!-- Nuevo botón que se habilitará al final -->
+  <ion-button expand="full" [disabled]="!isButtonEnabled" (click)="onNext()">
+    Seguir
+  </ion-button>
+</ion-content>

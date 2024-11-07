@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Step {{ currentStep + 1 }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ng-content></ng-content>
+  </ion-card-content>
+
+  <ion-card-footer>
+    <ion-button [disabled]="currentStep === 0" (click)="previousStep()">Anterior</ion-button>
+    <ion-button [disabled]="isLastStep()" (click)="nextStep()">Siguiente</ion-button>
+  </ion-card-footer>
+</ion-card>

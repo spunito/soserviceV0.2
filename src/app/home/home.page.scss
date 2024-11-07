@@ -1,0 +1,175 @@
+.cabezera {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: end;
+}
+
+
+
+.cabezera h1 {
+  flex-grow: 1; /* Permite que el h1 ocupe todo el espacio disponible */
+  text-align: center; /* Centra el h1 en su espacio */
+}
+
+.cabezera button {
+  flex: 0 0 auto; /* Asegura que h2 no se estire y quede alineado a la derecha */
+  margin-left: 10px; /* Da un pequeño espacio entre h1 y h2 */
+  width: 51px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 38.5px;
+  background: #6E6E6E;
+  color: #FFF;
+  font-family: "SF UI Display";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 10px; /* 76.923% */
+}
+
+
+
+
+
+
+.busqueda{
+  width: 100%;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 1px solid #606060;
+  background: #FFF;
+  color: rgba(27, 30, 40, 0.60);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  align-items: center;
+}
+h1{
+  color: #FF7029;
+  font-family: "League Spartan";
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.63px;
+  text-align: center;
+  
+}
+h2{
+  color: var(--Light-Text-Color, #1B1E28);
+  font-size: 19px;
+  font-family: "SF UI Display";
+
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 178.947% */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #f8f9fa;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.15); /* Sombra en el borde superior */
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.ion-button {
+  flex: 1;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  --background: #fff;
+  font-size: 12px;
+  color: var(--Light-Sub-Text-Color, #7D848D);
+  border: none;
+  text-decoration: none; /* Elimina la línea debajo del texto */
+}
+.texto{
+  font-family: "SF UI Display", sans-serif;
+  font-size: 12px;
+
+}
+
+/* Selecciona correctamente los íconos de Ionic */
+ion-icon {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 4px; /* Añade un poco de espacio entre el ícono y el texto */
+}
+.input-field {
+  width: 100%;
+  max-width: 335px; /* Ajusta el ancho máximo */
+  height: 56px;
+  border-radius: 14px;
+  background-color: #F7F7F9;
+  padding: 10px;
+  margin-bottom: 15px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --color: #1B1E28;
+  color: #1B1E28;
+}
+.input-field:focus {
+  width: 100%;
+  max-width: 335px; /* Ajusta el ancho máximo */
+  height: 56px;
+  border-radius: 14px;
+  background-color: #F7F7F9;
+  padding: 10px;
+  margin-bottom: 15px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --color: #1B1E28;
+  color: #1B1E28;
+}
+
+
+
+.cabezera {
+  position: relative;
+}
+
+.profile-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;  /* Ajusta el tamaño */
+  height: 22px;
+  border-radius: 50%;  /* Hace la imagen redonda */
+  object-fit: cover;  /* Asegura que la imagen no se distorsione */
+}

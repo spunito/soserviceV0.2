@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true" (ionScroll)="onScroll($event)" *ngIf="trabajo" style="position: relative; --ion-padding-top: 0;">
+  
+  <!-- Carrusel de imágenes -->
+  <swiper-container
+    slides-per-view="1"
+    space-between="10"
+    class="mySwiper"
+    pagination="false">
+    
+    <ng-container *ngFor="let image of images">
+      <swiper-slide>
+        <div class="parallax" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+      </swiper-slide>
+    </ng-container>
+  
+  </swiper-container>
+
+  <!-- Botón "Go Back" en la parte superior -->
+  <ion-button (click)="goBack()" class="go-back-button" fill="clear">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
+
+  <!-- Chip afuera del div de contenido -->
+  <div class="chip">{{ trabajo.timestamp | date: 'short' }}</div>
+
+  <div class="contenido" style="margin-top: -50px;">
+    <h2>{{ trabajo.descripcionTrabajo }}</h2>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="expresarInteres()">Estoy interesado</ion-button>
+  <ion-button (click)="contactarCreador(trabajo.creadorId)">Contactar</ion-button>
+</ion-footer>

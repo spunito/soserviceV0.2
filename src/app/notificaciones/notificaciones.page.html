@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="notificaciones.length > 0; else noNotificaciones">
+    <ion-card *ngFor="let notificacion of notificaciones">
+      <ion-card-header>
+        <ion-card-title>{{ notificacion.trabajoCategoria }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ notificacion.interesadoNombre }} está interesado en el trabajo.</p>
+        <small>{{ notificacion.timestamp | date: 'short' }}</small>
+        <p>Contratado: {{ notificacion.trabajoContratado }}</p> <!-- Debug Output -->
+        <ion-button *ngIf="notificacion.tipo === 'interes' && !notificacion.trabajoContratado"
+                    expand="full"
+                    (click)="contratarUsuario(notificacion)">
+          Contratar
+        </ion-button>
+        <ion-button *ngIf="notificacion.trabajoContratado"
+                    expand="full"
+                    (click)="mostrarTrabajador(notificacion)">
+          Trabajador
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ng-template #noNotificaciones>
+    <ion-text color="medium">
+      <p>No hay notificaciones disponibles.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

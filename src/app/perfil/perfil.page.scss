@@ -1,0 +1,19 @@
+.back-button-container{
+    position: absolute;
+    z-index: 10;
+}
+.profile-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+.profile-photo-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  

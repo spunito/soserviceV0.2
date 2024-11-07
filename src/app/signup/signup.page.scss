@@ -1,0 +1,154 @@
+.back-button-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.back-button {
+  --background: transparent;
+  --color: #1B1E28;
+  font-size: 24px;
+}
+
+.signup-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1B1E28;
+  font-family: "SF UI Display", sans-serif;
+}
+
+.field-label {
+  width: 100%;
+  max-width: 335px;
+  text-align: left;
+  color: #1B1E28;
+  font-family: "SF UI Display", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: auto; /* Centrar horizontalmente */
+  margin-right: auto; /* Centrar horizontalmente */
+}
+
+.input-field {
+  width: 100%;
+  max-width: 400px;
+  height: 56px;
+  border-radius: 14px;
+  background-color: #F7F7F9;
+  padding: 10px;
+  margin-bottom: 25px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  color: #1B1E28;
+  margin-left: auto; /* Centrar horizontalmente */
+  margin-right: auto; /* Centrar horizontalmente */
+  border: 2px solid transparent; /* Sin borde inicialmente */
+  transition: border 0.3s ease;
+}
+
+.input-field:focus {
+  border: 2px solid #FF7029; /* Borde naranja cuando se selecciona */
+  outline: none;
+}
+
+.textarea-field {
+  height: 100px; /* Ajusta el tamaño de la caja de texto */
+  resize: none; /* Evitar el redimensionado */
+}
+
+.textarea-field::placeholder {
+  color: #A9A9A9; /* Color de marcador de posición (gris claro) */
+}
+
+.textarea-field:focus::placeholder {
+  color: transparent; /* Oculta el marcador de posición al escribir */
+}
+
+.availability-segment {
+  width: 100%;
+  max-width: 335px;
+  background-color: #F7F7F9;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.button-wrapper {
+  width: 100%;
+  max-width: 335px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup-button {
+  width: 100%;
+  height: 56px;
+  border-radius: 16px !important;
+  background-color: #FF7029 !important; /* Asegúrate de que esto esté aquí */
+  color: #FFF !important; /* Color del texto */
+  font-family: "SF UI Display", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+
+  /* Asegúrate de incluir esto para evitar cambios en el hover o activo */
+  --background: #FF7029 !important;
+  --color: #FFF !important;
+}
+
+.error-message, .error-text {
+  color: #FF0000;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Estilos globales para ion-datetime */
+ion-datetime {
+  --background: #FF7029; /* Cambia el fondo del selector de fecha */
+  --color: #FFFFFF; /* Cambia el color del texto */
+  width: 100%; /* Asegúrate de que el ion-datetime ocupe el ancho completo */
+  max-width: 335px; /* Limitar el ancho para que coincida con otros campos */
+}
+
+/* Estilo para el contenedor del datetime */
+ion-datetime .datetime-button {
+  background-color: #FF7029 !important; /* Fondo cuando está activo */
+  color: #FFFFFF !important; /* Color del texto cuando está activo */
+}
+
+/* Cambia el color del texto seleccionado */
+ion-datetime .datetime-button:focus {
+  background-color: #FFA07A !important; /* Color más claro al seleccionar */
+  color: #000000 !important; /* Color del texto al seleccionar */
+}
+
+.availability-segment {
+  --background: transparent; /* Fondo transparente */
+}
+
+.yes-button {
+  color: #28a745; /* Color verde para "Sí" */
+  --background: transparent; /* Fondo transparente */
+}
+
+.no-button {
+  color: #dc3545; /* Color rojo para "No" */
+  --background: transparent; /* Fondo transparente */
+}
+
+/* Opcional: Cambiar el color al seleccionar */
+.yes-button.ion-activated {
+  background-color: rgba(40, 167, 69, 0.1); /* Fondo suave verde cuando está activado */
+}
+
+.no-button.ion-activated {
+  background-color: rgba(220, 53, 69, 0.1); /* Fondo suave rojo cuando está activado */
+}
+
+

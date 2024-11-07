@@ -1,0 +1,102 @@
+<ion-content>
+  <div class="container">
+    <div class="back-button-container">
+      <ion-button fill="clear" (click)="goBack()" class="back-button">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </div>
+    <h1 class="signup-title">Crear Cuenta</h1>
+    <form [formGroup]="regForm" novalidate (ngSubmit)="signUp()">
+      <div class="ion-padding">
+        <label class="field-label">Nombres</label>
+        <ion-input 
+          formControlName="name"  
+          type="text"
+          class="input-field"
+          placeholder="Ingresa tus nombres"
+          maxlength="15" 
+          (ionChange)="updateInput('name')"
+        ></ion-input>
+
+        <label class="field-label">Apellido Paterno</label>
+        <ion-input
+          formControlName="lastnamem"  
+          type="text"
+          class="input-field"
+          placeholder="Ingresa tu apellido paterno"
+          maxlength="15"  
+          (ionChange)="updateInput('lastnamem')"
+        ></ion-input>
+
+        <label class="field-label">Apellido Materno</label>
+        <ion-input
+          formControlName="lastnamef"  
+          type="text"
+          class="input-field"
+          placeholder="Ingresa tu apellido materno"
+          maxlength="15"  
+          (ionChange)="updateInput('lastnamef')"
+        ></ion-input>
+
+        <label class="field-label">Correo</label>
+        <ion-input 
+          formControlName="email" 
+          class="input-field" 
+          placeholder="Ingresa tu correo" 
+          required
+        ></ion-input>
+
+        <label class="field-label">Contraseña</label>
+        <ion-input
+          formControlName="password" 
+          type="password"
+          class="input-field"
+          placeholder="Ingresa tu contraseña"
+        ></ion-input>
+        <label class="field-label">Confirmar Contraseña</label>
+<ion-input
+  formControlName="confirmPassword"
+  type="password"
+  class="input-field"
+  placeholder="Confirma tu contraseña"
+></ion-input>
+
+        <label class="field-label">RUT</label>
+        <ion-input 
+        formControlName="rut"  
+        class="input-field" 
+        maxlength="12"
+        placeholder="Ingrese su RUT sin puntos ni guion"
+        (ionInput)="formatRUT()">
+      </ion-input>
+      <div>
+      <ion-text color="danger" *ngIf="regForm.get('rut')?.hasError('invalidRUTLength') && regForm.get('rut')?.touched">
+        El RUT debe cumplir con el formato!.
+      </ion-text>
+    </div>
+      <label class="field-label">Breve Desripcion Personal</label>
+      <textarea 
+        id="habilidades" 
+        formControlName="skills" 
+        class="input-field textarea-field" 
+        placeholder="Escribe aquí tu presentación"
+      ></textarea>
+
+
+        <label class="field-label">Número de Teléfono</label>
+          <ion-input
+          class="input-field" 
+            formControlName="phone"
+            type="tel"
+            placeholder="Ingresa tu número de teléfono"
+            maxlength="15" 
+          ></ion-input>
+        
+
+      </div>
+      <div class="button-wrapper">
+        <ion-button type="submit" class="signup-button" style="background-color: blue;">CREAR CUENTA</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

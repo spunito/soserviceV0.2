@@ -1,0 +1,27 @@
+<div class="back-button-container">
+  <ion-button fill="clear" (click)="goBack()" class="back-button">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
+</div>
+<ion-content>
+  <div class="profile-photo-container" (click)="changeProfilePicture()">
+    <img [src]="profilePhotoUrl" alt="Foto de perfil" />
+  </div>
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="name" placeholder="Nombre del usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Correo electrónico</ion-label>
+    <ion-input [(ngModel)]="email" placeholder="Correo electrónico" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Número de teléfono</ion-label>
+    <ion-input [(ngModel)]="phone" placeholder="Número de teléfono"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="updateUserProfile()">Actualizar perfil</ion-button>
+</ion-content>

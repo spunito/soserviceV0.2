@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Firebase File Transfer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <img *ngIf="image" [src]="image"/>
+
+  <ion-button expand="block" (click)="takePicture()">
+    Take A Picture
+  </ion-button>
+  
+</ion-content>

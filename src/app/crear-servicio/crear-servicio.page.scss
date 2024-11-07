@@ -1,0 +1,193 @@
+*{
+  align-items: center;
+  text-align: center; /* Asegúrate de que el contenedor ocupa toda la altura */
+}
+
+h2 {
+  margin-top: 8%;
+  color: var(--Light-Text-Color, #1B1E28);
+  text-align: center;
+  font-family: "SF UI Display";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 130.769% */
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de ancho flexible */
+  gap: 20px; /* Espacio entre los elementos */
+  margin-top: 20px;
+  justify-items: center; /* Centra el contenido dentro de cada columna */
+}
+
+.category-container {
+  margin: 10px;
+  border: solid 1px transparent; /* Bordes por defecto transparentes */
+  transition: border-color 0.3s ease; /* Transición suave para el cambio de borde */
+  height: 96px;
+  width: 80px;
+  border-radius: 6px;
+  border: 2px solid #7D848D; /* Borde por defecto */
+  display: flex; /* Habilitar flexbox */
+  flex-direction: column; /* Alinear elementos en columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+}
+
+
+.category-container.selected {
+  border-color: #FF7029; /* Cambia el color del borde al seleccionar */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+img {
+  
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.category-label {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* Puedes ajustar el color según tu diseño */
+  text-align: center;
+}
+
+p {
+  color: var(--Light-Text-Color, #1B1E28);
+  font-family: "SF UI Display";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+}
+
+.footer-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 90%;
+  max-width: 307px;
+  height: 56px;
+  border-radius: 10px;
+  background: #FF7029;
+}
+
+.story-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la pantalla verticalmente */
+}
+
+.story-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 36px; /* Tamaño de fuente grande */
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  color: #1B1E28; /* Ajuste de color de texto */
+  resize: none;
+  line-height: 1.2;
+  overflow: hidden; /* Oculta los bordes de desplazamiento */
+}
+
+
+::placeholder {
+  color: #1B1E28; // Placeholder transparente
+  font-size: 36px;
+  text-align: center;
+}
+.preview-image {
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.custom-take-photo-btn {
+  width: 300px;
+  height: 120px;
+  border: 3px dashed #7D848D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centrar el botón horizontalmente */
+  border-radius: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 10%;
+}
+
+.icono-boton {
+  width: 60px;
+  height: 60px;
+}
+
+.custom-take-photo-btn:hover {
+  background-color: #f0f1f2;
+}
+
+
+.confirmacion {
+  background-color: #2CA876; /* Color de fondo deseado */
+  height: 100vh; /* Para ocupar toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.confirmacion h2 {
+  font-family: Geliat-ExtraBold;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 34px;
+  margin-top: 30px;
+}
+
+.confirmacion p {
+  color: #393939;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 34px;
+}
+.confirmacion img {
+  margin-top: 50px;
+}
+.confirmacion btn {
+  margin-top: 50px;
+}
+
+.boton-inicio {
+  width: 174px;
+  height: 46px;
+  border-radius: 21px;
+  border: 1px solid #FFF;
+  background-color: transparent;
+  color: #FFF;
+  text-align: center;
+  font-family: "SF UI Display", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 12px; /* 60% */
+}
+
+
+
+
+
+

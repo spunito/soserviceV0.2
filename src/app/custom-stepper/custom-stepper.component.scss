@@ -1,0 +1,42 @@
+// Estilo básico para el contenedor del stepper
+ion-card {
+    margin: 16px; // Margen alrededor del card
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra sutil para destacar el card
+  }
+  
+  // Encabezado del card
+  ion-card-header {
+    background-color: #f8f8f8; // Color de fondo suave
+    padding: 16px; // Espaciado interno
+  }
+  
+  // Título del card
+  ion-card-title {
+    font-size: 1.5em; // Tamaño de fuente más grande
+    font-weight: bold; // Negrita
+  }
+  
+  // Contenido del card
+  ion-card-content {
+    padding: 16px; // Espaciado interno
+  }
+  
+  // Pie del card
+  ion-card-footer {
+    display: flex; // Para alinear botones
+    justify-content: space-between; // Distribuir espacio entre botones
+  }
+  
+  // Botones
+  ion-button {
+    --background: #0069FF; // Color de fondo personalizado
+    --color: white; // Color de texto blanco
+    width: 48%; // Ajustar el ancho del botón
+  }
+  
+  // Estilo para el botón deshabilitado
+  ion-button[disabled] {
+    --background: #ccc; // Color de fondo gris para botones deshabilitados
+    --color: #666; // Color de texto gris para botones deshabilitados
+  }
+  

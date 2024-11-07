@@ -1,0 +1,14 @@
+.message-timestamp {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .sent-message {
+    background-color: #dcf8c6; /* Color de fondo para mensajes enviados */
+    text-align: right; /* Alinear el texto a la derecha */
+  }
+
+  .received-message {
+    background-color: #f1f0f0; /* Color de fondo para mensajes recibidos */
+    text-align: left; /* Alinear el texto a la izquierda */
+  }

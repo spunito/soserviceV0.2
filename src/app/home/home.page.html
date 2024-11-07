@@ -1,0 +1,87 @@
+<ion-content>
+  <div class="container">
+    <div class="cabezera">
+      <a href="perfil" style="display: inline-block; position: relative; width: 35px; height: 35px;">
+        <!-- Imagen de perfil sobre el icono -->
+        <img *ngIf="profilePhotoUrl" [src]="profilePhotoUrl" alt="Foto de perfil" class="profile-photo"/>
+    
+        <!-- Icono de usuario (si no hay foto de perfil) -->
+        <svg *ngIf="!profilePhotoUrl" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          
+        </svg>
+      </a>
+      <h1>SOSERVICE</h1>
+      <button>Maipú</button>
+    </div>
+    
+    <ion-button (click)="logout()">Cerrar sesión</ion-button>
+    
+ 
+    <ion-content>
+      <div *ngIf="userName">
+        <h2>Bienvenido, {{ userName }}!</h2> <!-- Mensaje de bienvenida -->
+      </div>
+      <div *ngIf="!userName">
+        <h2>Cargando...</h2> <!-- Mensaje mientras se carga el nombre -->
+      </div>
+      <input type="search" class="busqueda">
+      <ion-card *ngFor="let trabajo of trabajosPosteados" (click)="goToDetalleTrabajo(trabajo)">
+        <ion-card-header>
+          <ion-card-title>{{ trabajo.categoria }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <img *ngIf="trabajo.imageUrl" [src]="trabajo.imageUrl" alt="Imagen del trabajo" style="width: 100%; height: auto;"/> <!-- Mostrar imagen si existe -->
+          <p><strong>Descripción:</strong> {{ trabajo.descripcionTrabajo }}</p>
+          <p><strong>Requerimientos:</strong> {{ trabajo.requerimientos }}</p>
+          <p><strong>Fecha:</strong> {{ trabajo.timestamp | date: 'short' }}</p>
+          <p *ngIf="trabajo.creadorNombre"><strong>Creador:</strong> {{ trabajo.creadorNombre }}</p>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+    <input type="text" class="busqueda" placeholder="Busca tu trabajo ideal">
+    
+
+    <ion-footer class="bottom-nav">
+      <div class="nav-container">
+        
+        <a  routerLink="/notificaciones" class="ion-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+            <path d="M13.989 3.56152C11.9011 3.56152 9.89868 4.39095 8.42229 5.86734C6.9459 7.34373 6.11647 9.34615 6.11647 11.4341V15.6345L4.43 19.8577C4.37718 19.9903 4.35762 20.1339 4.37303 20.2758C4.38845 20.4177 4.43837 20.5537 4.51843 20.6719C4.59849 20.7901 4.70627 20.8869 4.83235 20.9539C4.95843 21.0209 5.09899 21.0559 5.24175 21.0561H10.4901C10.4901 22.9945 12.0506 24.555 13.989 24.555C15.9274 24.555 17.4879 22.9945 17.4879 21.0561H22.7363C22.8791 21.0559 23.0196 21.0209 23.1457 20.9539C23.2718 20.8869 23.3796 20.7901 23.4596 20.6719C23.5397 20.5537 23.5896 20.4177 23.605 20.2758C23.6204 20.1339 23.6009 19.9903 23.5481 19.8577L21.8616 15.6328V11.4341C21.8616 9.34615 21.0322 7.34373 19.5558 5.86734C18.0794 4.39095 16.077 3.56152 13.989 3.56152ZM15.7385 21.0561C15.7385 22.0288 14.9617 22.8055 13.989 22.8055C13.0163 22.8055 12.2396 22.0288 12.2396 21.0561H15.7385ZM7.86593 11.4341C7.86593 9.81013 8.51104 8.2527 9.65934 7.10439C10.8076 5.95609 12.3651 5.31098 13.989 5.31098C15.613 5.31098 17.1704 5.95609 18.3187 7.10439C19.467 8.2527 20.1121 9.81013 20.1121 11.4341V15.8042C20.1124 15.9151 20.1338 16.025 20.1751 16.1279L21.4452 19.3066H6.53284L7.80295 16.1279C7.84427 16.025 7.86564 15.9151 7.86593 15.8042V11.4341Z" fill="#7D848D"/>
+          </svg>
+          <p class="texto">Notificaciones</p>
+        </a>
+        <a routerLink="/contactos" class="ion-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6687 1.75394C6.1855 1.75394 2.55118 5.38826 2.55118 9.87142C2.55118 11.8456 3.25487 13.6533 4.42601 15.0604C4.60908 15.2805 4.66751 15.5785 4.58104 15.8514L3.75425 18.4599L7.11716 17.4005C7.30118 17.3425 7.49956 17.3497 7.67892 17.4208C8.60306 17.7871 9.61126 17.9889 10.6687 17.9889H12.908C17.3912 17.9889 21.0254 14.3546 21.0254 9.87142C21.0254 5.38826 17.3912 1.75394 12.908 1.75394H10.6687ZM0.871704 9.87142C0.871704 4.46071 5.25795 0.0744629 10.6687 0.0744629H12.908C18.3187 0.0744629 22.7049 4.46071 22.7049 9.87142C22.7049 15.2821 18.3187 19.6684 12.908 19.6684H10.6687C9.50307 19.6684 8.3834 19.4645 7.3445 19.0897L3.74525 20.2236C2.66443 20.5641 1.64818 19.5461 1.99055 18.4659L2.53786 18.6394L1.99055 18.4659L2.84526 15.7693C1.60671 14.1287 0.871704 12.085 0.871704 9.87142Z" fill="#7D848D"/>
+          </svg>
+          <p class="texto" style="margin-top: 7px;">Mensajes</p>
+        </a>
+        <a href="crear-servicio" class="ion-button  center-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <circle cx="22.7481" cy="22.7874" r="22.4595" fill="#FF7029"/>
+            <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="24" fill="white" font-family="Arial">+</text>
+          </svg>
+        </a>
+        <a href="crear-servicio" class="ion-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M3.05469 11.7373L13.1352 3.67284C13.9766 2.99968 15.1724 2.99968 16.0138 3.67284L26.0944 11.7373" stroke="#7D848D" stroke-width="1.67948" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.6689 4.88281L7.06097 8.62675C6.22434 9.30651 5.80602 9.6464 5.58239 10.1162C5.35876 10.5861 5.35876 11.1251 5.35876 12.203V16.3457C5.35876 20.6901 5.35876 22.8623 6.70839 24.2119C8.05803 25.5616 10.2302 25.5616 14.5746 25.5616C18.919 25.5616 21.0913 25.5616 22.4408 24.2119C23.7905 22.8623 23.7905 20.6901 23.7905 16.3457V12.203C23.7905 11.1251 23.7905 10.5861 23.5669 10.1162C23.3432 9.6464 22.9249 9.30651 22.0883 8.62675L17.4804 4.88281C16.0886 3.75195 15.3927 3.18652 14.5746 3.18652C13.7566 3.18652 13.0607 3.75195 11.6689 4.88281Z" stroke="#7D848D" stroke-width="1.67948"/>
+            <path d="M11.9825 18.9373H17.1665" stroke="#7D848D" stroke-width="1.67948" stroke-linecap="round"/>
+          </svg>
+          <p class="texto" style="margin-top: 2px;">Inicio</p>
+        </a>
+        
+        <a href="historial" class="ion-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+            <path d="M4.83329 25.3751C4.16871 25.3751 3.59999 25.1386 3.12713 24.6658C2.65426 24.1929 2.41743 23.6238 2.41663 22.9584V9.66675C2.41663 9.00216 2.65346 8.43344 3.12713 7.96058C3.60079 7.48772 4.16951 7.25089 4.83329 7.25008H9.66663V4.83341C9.66663 4.16883 9.90346 3.60011 10.3771 3.12725C10.8508 2.65439 11.4195 2.41755 12.0833 2.41675H16.9166C17.5812 2.41675 18.1503 2.65358 18.624 3.12725C19.0977 3.60091 19.3341 4.16964 19.3333 4.83341V7.25008H24.1666C24.8312 7.25008 25.4003 7.48691 25.874 7.96058C26.3477 8.43425 26.5841 9.00297 26.5833 9.66675V22.9584C26.5833 23.623 26.3469 24.1921 25.874 24.6658C25.4011 25.1395 24.832 25.3759 24.1666 25.3751H4.83329ZM4.83329 22.9584H24.1666V9.66675H4.83329V22.9584ZM12.0833 7.25008H16.9166V4.83341H12.0833V7.25008Z" fill="#7D848D"/>
+          </svg>
+          <p class="texto" style="margin-top: 3px;">Solicitudes</p>
+        </a>
+        
+        
+        
+      </div>
+    </ion-footer>
+  </div>
+</ion-content>

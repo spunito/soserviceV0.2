@@ -1,0 +1,72 @@
+<ion-content>
+  <div class="container">
+    <div class="logo-container">
+      <img src="assets/logo/SOSERVICE.png" alt="SOSERVICE Logo" class="logo" />
+    </div>
+
+    <h1 class="login-title">Iniciar Sesión</h1>
+
+    <form [formGroup]="loginForm" novalidate>
+      <div class="ion-padding">
+        <!-- Campo de Correo -->
+        <label class="field-label">Correo</label>
+        
+          <ion-input
+            formControlName="email"
+            type="email"
+            class="input-field"
+            placeholder="Ingresa tu correo"
+          ></ion-input>
+       
+
+        <!-- Mensajes de error para el correo -->
+        <div *ngIf="errorControl['email'].invalid && (errorControl['email'].dirty || errorControl['email'].touched)" class="error-msg">
+          <div *ngIf="errorControl['email'].errors?.required">El correo es obligatorio.</div>
+          <div *ngIf="errorControl['email'].errors?.invalidGmail">El correo debe contener "&#64;" y "."</div>
+        </div>
+
+        <!-- Campo de Contraseña -->
+        <label class="field-label">Contraseña</label>
+        <div class="input-container">
+          <ion-input
+            [type]="passwordType"
+            formControlName="password"
+            class="input-field"
+            placeholder="Ingresa tu contraseña"
+          ></ion-input>
+          <ion-icon
+            [name]="passwordIcon"
+            class="password-toggle-icon"
+            (click)="togglePasswordVisibility()"
+          ></ion-icon>
+        </div>
+        
+        
+        
+        
+          
+        
+
+        <a href="/reset-password" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+        <div class="button-wrapper">
+          <ion-button (click)="login()" expand="block" class="login-button">
+            Iniciar
+          </ion-button>
+        </div>
+
+        <div class="create-account-container">
+          <p class="no-account-text">¿No tienes una cuenta?</p>
+          <a href="/signup" class="create-account-link">Crear Cuenta</a>
+        </div>
+      </div>
+    </form>
+
+    <ion-alert
+      [isOpen]="showErrorAlert"
+      header="Error"
+      message="Cuenta o contraseña incorrectas, inténtelo de nuevo"
+      [buttons]="alertButtons"
+    ></ion-alert>
+  </div>
+</ion-content>

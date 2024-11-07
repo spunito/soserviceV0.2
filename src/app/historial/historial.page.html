@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+    <div class="back-button-container">
+      <ion-button fill="clear" (click)="goBack()" class="back-button">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </div>
+    
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">historial</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="misTrabajos$ | async as trabajos; else noTrabajos">
+    <div *ngFor="let trabajo of trabajos">
+      <ion-card>
+        <img [src]="trabajo.imageUrl" alt="Imagen del trabajo" *ngIf="trabajo.imageUrl">
+        <ion-card-header>
+          <ion-card-subtitle><small>Categoría: {{ trabajo.categoria }}</small></ion-card-subtitle>
+          <ion-card-title><h3>{{ trabajo.descripcionTrabajo }}</h3></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ trabajo.requerimientos }}</p>
+        </ion-card-content>
+        
+        
+      
+    </ion-card>
+    </div>
+  </div>
+  <ng-template #noTrabajos>
+    <p>No has creado trabajos aún.</p>
+  </ng-template>
+
+</ion-content>
